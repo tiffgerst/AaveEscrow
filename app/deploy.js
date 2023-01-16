@@ -4,16 +4,16 @@ import {ethers} from 'ethers';
 
 // you can find a list of all AAVE contracts deployed to kovan here:
 // https://docs.aave.com/developers/deployed-contracts
-const poolAddress = "0xE0fBa4Fc209b4948668006B2bE61711b7f465bAe";
-const aDaiAddress = "0x6dDFD6364110E9580292D9eCC745F75deA7e72c8";
-const daiAddress = "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD";
+const poolAddress = "0x368EedF3f56ad10b9bC57eed4Dac65B26Bb667f6";
+const aDaiAddress = "0x310839bE20Fc6a8A89f33A59C7D5fC651365068f";
+const daiAddress = "0xDF1742fE5b0bFc12331D8EAec6b478DfDbD31464";
 
 export default async function deploy(arbiter, beneficiary, value) {
   await ethereum.enable();
   const provider = new ethers.providers.Web3Provider(ethereum);
   const network = await provider.getNetwork();
 
-  if(network.chainId === 42) {
+  if(network.chainId === 5) {
     try {
       const signer = provider.getSigner();
       const signerAddress = await signer.getAddress();
